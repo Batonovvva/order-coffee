@@ -9,17 +9,23 @@ form.addEventListener("submit", function (event) {
 
 
 function showModal() {
+    const drinks = document.querySelectorAll(".beverage");
+    const count = drinks.length;
+
     const overlay = document.createElement("div");
     overlay.className = "modal-overlay";
 
     const modal = document.createElement("div");
     modal.className = "modal";
 
-    
     const closeButton = document.createElement("button");
     closeButton.className = "modal-close";
     closeButton.type = "button";
     closeButton.textContent = "x";
+    
+    const title = document.createElement("p");
+    title.textContent = `Вы заказали ${count} ${getWord(count)}`;
+    
 
     const text = document.createElement("p");
     text.textContent = "Заказ принят";
@@ -31,7 +37,7 @@ function showModal() {
         }
     });
 
-    modal.append(closeButton, text);
+    modal.append(closeButton, title, text);
     overlay.append(modal);
     document.body.append(overlay);
 
