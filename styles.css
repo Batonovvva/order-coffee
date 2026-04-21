@@ -10,7 +10,7 @@
 }
 
 .remove-button,
-.modal-close-button {
+.modal-close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -67,7 +67,7 @@
 }
 
 .wishes-preview-text:empty::before {
-    content: "—";
+    content: "-";
     color: #8a8a8a;
 }
 
@@ -103,11 +103,6 @@
     box-sizing: border-box;
 }
 
-.modal-overlay.hidden {
-    display: none;
-    pointer-events: none;
-}
-
 .modal {
     position: relative;
     width: 500px;
@@ -118,11 +113,8 @@
     box-sizing: border-box;
 }
 
-.modal-title {
-    margin: 0 0 16px;
-}
-
-.modal-order-count {
+.modal-title,
+.modal-text {
     margin: 0 0 16px;
 }
 
