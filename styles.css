@@ -1,4 +1,5 @@
 .beverage {
+    position: relative;
     border: 1px solid #eee;
     margin: 15px 0;
     padding: 15px;
@@ -6,6 +7,24 @@
 
 .beverage-count {
     margin: 0 0 15px;
+}
+
+.remove-button,
+.modal-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    color: #8a8a8a;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.remove-button:disabled {
+    opacity: 0.35;
+    cursor: default;
 }
 
 .field {
@@ -28,6 +47,30 @@
     display: block;
 }
 
+.wishes-field {
+    margin-top: 20px;
+}
+
+.wishes-input {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    min-height: 90px;
+    resize: vertical;
+    box-sizing: border-box;
+    font: inherit;
+    padding: 10px;
+}
+
+.wishes-preview {
+    margin: 10px 0 0;
+}
+
+.wishes-preview-text:empty::before {
+    content: "—";
+    color: #8a8a8a;
+}
+
 .add-button {
     border: none;
     background: none;
@@ -36,6 +79,10 @@
     font-size: 14px;
     text-decoration: underline dashed;
     cursor: pointer;
+}
+
+.submit-row {
+    margin-top: 30px;
 }
 
 .submit-button {
@@ -48,30 +95,50 @@
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 20px;
+    box-sizing: border-box;
+}
 
+.modal-overlay.hidden {
+    display: none;
+    pointer-events: none;
 }
 
 .modal {
-    width: 500px;
-    min-height: 120px;
-    background: white;
-    border-radius: 10px;
-    padding: 30px;
     position: relative;
+    width: 500px;
+    max-width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px 24px;
+    box-sizing: border-box;
 }
 
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.modal-title {
+    margin: 0 0 16px;
+}
 
-    border: none;
-    background: transparent;
-    font-size: 22px;
-    cursor: pointer;
+.modal-order-count {
+    margin: 0 0 16px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.order-table th,
+.order-table td {
+    border: 1px solid #d8d8d8;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.order-table th {
+    background: #f6f6f6;
 }
